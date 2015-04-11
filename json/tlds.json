@@ -1,9 +1,9 @@
 [
-  { "tld": ".academy" },
-  { "tld": ".accountants" },
-  { "tld": ".actor" },
-  { "tld": ".agency" },
-  { "tld": ".airforce" },
-  { "tld": ".army" },
-  { "tld": ".asia" }
+  ".academy",
+  ".accountants",
+  ".actor",
+  ".agency",
+  ".airforce",
+  ".army",
+  ".asia"
 ]
