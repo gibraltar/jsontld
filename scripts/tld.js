@@ -7,7 +7,7 @@ $(document).ready(function()
   });
 
   // loading json file
-  var url = "https://cdn.rawgit.com/gibraltar/jsontld/master/json/tlds.json";
+  var url = "https://rawgit.com/gibraltar/jsontld/master/json/tlds.json";
 
 
   $('#goBtn').click(function() {
