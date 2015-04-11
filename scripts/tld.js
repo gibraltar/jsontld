@@ -52,7 +52,7 @@ $(document).ready(function()
       {
 debugger;
         var domain = curName + val;
-        var redirect = "http://shop.whynotdomains.com/domains/search.aspx?domainToCheck="+curName+"&tld="+val.tld;
+        var redirect = "http://shop.whynotdomains.com/domains/search.aspx?domainToCheck="+curName+"&tld="+val;
               
         $('#domainOptions').append($('<option>', { 
           value: redirect,
