@@ -50,7 +50,8 @@ $(document).ready(function()
     {
       $.each(data, function (i, val)
       {
-        var domain = curName + val.tld;
+debugger;
+        var domain = curName + val;
         var redirect = "http://shop.whynotdomains.com/domains/search.aspx?domainToCheck="+curName+"&tld="+val.tld;
               
         $('#domainOptions').append($('<option>', { 
