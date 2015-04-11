@@ -12,49 +12,13 @@
 
 	<h3>Domain redirector</h3>
 	
-	<input type="text" name="domainName" placeholder="Domain name">
-	<select id="domainOptions" style="display: none"></select>
-	<input id="btn" type="button" value="Purchase" style="display: none">
+  <form>
+	  <input type="text" name="domainName" placeholder="Domain name">
+	  <select id="domainOptions" style="display: none"></select>
+	  <input id="purchaseBtn" type="button" value="Purchase" style="display: none">
+  </form>
 	
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script>
-		$(document).ready(function()
-		{
-			var url = "https://gist.githubusercontent.com/jbspeakr/4466385/raw/55d79e4ff9f30be5009d94aa1627745a81e28a4f/top-level-domains.json";
-			
-			$('#btn').click(function ()
-			{ 
-				window.location.href = $('#domainOptions').val();
-			});
-			
-		    $("input[name=domainName]").keypress(function(e)
-			{
-				var curName = $(this).val();
-				if(e.which == 13)
-				{
-					
-					$.getJSON( url, function( data )
-					{
-						$.each(data, function (i, val)
-						{
-							var domain = curName + '.' + val.fields.tld
-							var redirect = "http://shop.whynotdomains.com/domains/search.aspx?domainToCheck="+curName+"&tld="+val.fields.tld;
-							
-						    $('#domainOptions').append($('<option>', { 
-						        value: redirect,
-						        text : domain 
-						    }));
-						});
-					
-						
-						// show the controls
-						$('#domainOptions').show();
-						$('#btn').show();
-					
-					});
-		        }
-		    });
-		});
-	</script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="scripts/tld.js"></script>
 </body>
 </html>
