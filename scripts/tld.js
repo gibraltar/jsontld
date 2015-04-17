@@ -8,6 +8,7 @@ $(document).ready(function()
 
   // loading json file
   var url = "https://rawgit.com/gibraltar/jsontld/master/json/tlds.json";
+  var redirectUrl = "http://shop.whynotdomains.com/domains/search.aspx?domainToCheck=";
 
 
   $('#goBtn').click(function() {
@@ -21,7 +22,17 @@ $(document).ready(function()
   { 
     window.location.href = $('#domainOptions').val();
   });
-      
+  
+
+  $('#domainOptions').keyup(function(e)
+  {
+    if(e.which == 13)
+    {
+      window.location.href = $(this).val();
+    }
+  });
+
+
   $("input[name=domainName]").keyup(function(e)
   {
     var curName = $(this).val();
@@ -50,18 +61,15 @@ $(document).ready(function()
     {
       $.each(data, function (i, val)
       {
-debugger;
         var domain = curName + val;
-        var redirect = "http://shop.whynotdomains.com/domains/search.aspx?domainToCheck="+curName+"&tld="+val;
-              
         $('#domainOptions').append($('<option>', { 
-          value: redirect,
+          value: redirectUrl + curName+"&tld="+val,
           text : domain 
         }));
       });
-          
+      
       // show the controls
-      $('#domainOptions').show();
+      $('#domainOptions').show().focus();
       $('#purchaseBtn').show();
     });
   }
